@@ -1,7 +1,6 @@
-
-import {ReactNode} from "react";
-import AboutPage from "pages/AboutPage/ui/AboutPage";
-import MainPage from "pages/MainPage/ui/MainPage";
+import { ReactNode } from 'react';
+import AboutPage from 'pages/AboutPage/ui/AboutPage';
+import MainPage from 'pages/MainPage/ui/MainPage';
 
 enum RouterPaths {
     MAIN = '/',
@@ -14,14 +13,14 @@ interface RouterProps {
 }
 
 export const Routes: Record<RouterPaths, RouterProps> = {
-    [RouterPaths.MAIN]: {
-        path: RouterPaths.MAIN,
-        element: <MainPage />,
+  [RouterPaths.MAIN]: {
+    path: RouterPaths.MAIN,
+    element: <MainPage />,
 
-    },
-    [RouterPaths.ABOUT]: {
-        path: RouterPaths.ABOUT,
-        element: <AboutPage />,
-    }
+  },
+  [RouterPaths.ABOUT]: {
+    path: RouterPaths.ABOUT,
+    element: <AboutPage />,
+  },
 };
 // {['/']: {path: '/', element: <MainPage /> }, [/about]: {path: '/about', element: <AboutPage /> }}
