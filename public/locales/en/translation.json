@@ -1,5 +1,8 @@
 {
   "Тестовый перевод": "Test translation",
   "Перевод":"Translate",
-  "Язык": "English"
+  "Язык": "English",
+  "Страница не найден": "Page is not found",
+  "Загрузка...": "Loading...",
+  "Кинуть в экран ошибку": "throw Error"
 }
