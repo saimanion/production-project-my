@@ -1,5 +1,3 @@
-const { rewriter } = require('json-server');
-
 module.exports = {
   env: {
     browser: true,
@@ -39,10 +37,23 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 0,
     'no-underscore-dangle': 0,
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
-    'max-len': ['error', { ignoreComments: true }],
+    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: [' data-testid'] }],
+    'max-len': [
+      'error', {
+        ignoreComments: true, code: 120,
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts, tsx}'],
+      rules:
+        {
+          'i18next/no-literal-string': 'off',
+        },
+    },
+  ],
 };
