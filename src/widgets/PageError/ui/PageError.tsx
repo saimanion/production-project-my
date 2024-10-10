@@ -1,11 +1,11 @@
-import { ClassNames } from 'shared/lib/ClassNames/ClassNames';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button';
+import { ClassNames } from '../../../shared/lib/ClassNames/ClassNames';
+import { Button } from '../../../shared/ui/Button';
 import cls from './PageError.module.scss';
 
 interface PageErrorProps {
-    className?: string;
+  className?: string;
 }
 
 export const PageError:FC<PageErrorProps> = ({ className }) => {
