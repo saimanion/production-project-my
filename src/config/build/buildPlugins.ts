@@ -2,6 +2,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack, { ProgressPlugin } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 
 export function buildPlugins({ paths, isDev }:BuildOptions): webpack.WebpackPluginInstance[] {
@@ -21,14 +22,24 @@ export function buildPlugins({ paths, isDev }:BuildOptions): webpack.WebpackPlug
   });
 
   const HotModuleReplacementPluginInstance = new webpack.HotModuleReplacementPlugin({});
+  const BundleAnalyzerPluginInstance = new BundleAnalyzerPlugin({
+    openAnalyzer: false,
+  });
+  // const ReactRefreshPluginInstance = [isDev && new ReactRefreshPlugin()].filter(Boolean);
 
-  const ReactRefreshPluginInstance = [isDev && new ReactRefreshPlugin()].filter(Boolean);
-
-  return [
+  const plugins = [
     HtmlWebpackPluginInstance,
     ProgressPluginInstance,
     MiniCssExtractPluginInstance,
-    DefinePluginInstance,
-    // HotModuleReplacementPluginInstance
+    DefinePluginInstance,,
+    BundleAnalyzerPluginInstance,
   ];
+  if (isDev) {
+    plugins.push(
+      HotModuleReplacementPluginInstance,
+      BundleAnalyzerPluginInstance,
+    );
+  }
+
+  return plugins;
 }
