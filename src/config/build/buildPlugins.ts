@@ -32,8 +32,7 @@ export function buildPlugins({ paths, isDev }:BuildOptions): webpack.WebpackPlug
     HtmlWebpackPluginInstance,
     ProgressPluginInstance,
     MiniCssExtractPluginInstance,
-    DefinePluginInstance,,
-    BundleAnalyzerPluginInstance,
+    DefinePluginInstance,
   ];
   if (isDev) {
     plugins.push(
