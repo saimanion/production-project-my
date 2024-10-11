@@ -8,6 +8,7 @@ const MainPage = () => {
   const { t } = useTranslation('main');
   return (
     <div>
+      {/* eslint-disable-next-line i18next/no-literal-string */}
       <Button theme={ThemeButton.OUTLINE}>Кнопка с обводкой</Button>
       <BugButton />
       {t('Главная страница')}

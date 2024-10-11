@@ -1,3 +1,4 @@
 import { lazy } from 'react';
 // @ts-ignore
-export const MainPageAsync = lazy(() => new Promise((resolve) => setTimeout(() => resolve(import('./MainPage')), 150000)));
+// eslint-disable-next-line max-len
+export const MainPageAsync = lazy(() => new Promise((resolve) => { setTimeout(() => resolve(import('./MainPage')), 150000); }));
