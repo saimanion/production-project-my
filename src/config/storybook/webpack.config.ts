@@ -35,12 +35,5 @@ export default ({ config }: { config: webpack.Configuration }) => {
     exclude: /node_modules/,
   });
 
-  // // eslint-disable-next-line no-param-reassign
-  // config.resolve.alias = {
-  //   ...config.resolve.alias,
-  //   widgets: path.resolve(__dirname, '../src/widgets'),
-  //   shared: path.resolve(__dirname, '../src/shared'),
-  // };
-
   return config;
 };

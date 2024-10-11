@@ -27,6 +27,7 @@ export function buildPlugins({ paths, isDev }:BuildOptions): webpack.WebpackPlug
   });
   // const ReactRefreshPluginInstance = [isDev && new ReactRefreshPlugin()].filter(Boolean);
 
+  // eslint-disable-next-line no-sparse-arrays
   const plugins = [
     HtmlWebpackPluginInstance,
     ProgressPluginInstance,

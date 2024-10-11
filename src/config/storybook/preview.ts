@@ -1,4 +1,3 @@
-import { addDecorator } from '@storybook/react';
 import { Themes } from '../../app/providers/ThemeProvider';
 import { StyleDecorator } from '../../shared/config/storybook/StyleDecorator/StyleDecorator';
 import { ThemeDecorator } from '../../shared/config/storybook/ThemeDecorator/ThemeDecorator';
